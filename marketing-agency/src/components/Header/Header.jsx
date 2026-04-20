@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './Header.css';
+import { useState } from "react";
+import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
@@ -21,16 +21,37 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <h1>Creative<span>Agency</span></h1>
+            <h1>
+              Creative<span>Agency</span>
+            </h1>
           </div>
-          <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
+          <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
-              <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-              <li><a onClick={() => scrollToSection('services')}>Services</a></li>
-              <li><a onClick={() => scrollToSection('about')}>About</a></li>
-              <li><a onClick={() => scrollToSection('portfolio')}>Portfolio</a></li>
-              <li><a onClick={() => scrollToSection('testimonials')}>Testimonials</a></li>
-              <li><a onClick={() => scrollToSection('contact')} className="contact-btn">Contact Us</a></li>
+              <li>
+                <a onClick={() => scrollToSection("home")}>Home</a>
+              </li>
+              <li>
+                <a onClick={() => scrollToSection("services")}>Services</a>
+              </li>
+              <li>
+                <a onClick={() => scrollToSection("about")}>About</a>
+              </li>
+              <li>
+                <a onClick={() => scrollToSection("portfolio")}>Portfolio</a>
+              </li>
+              <li>
+                <a onClick={() => scrollToSection("testimonials")}>
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => scrollToSection("contact")}
+                  className="contact-btn"
+                >
+                  Contact Us
+                </a>
+              </li>
             </ul>
           </nav>
           <div className="hamburger" onClick={toggleMenu}>
